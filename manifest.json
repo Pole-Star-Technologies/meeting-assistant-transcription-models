@@ -1,0 +1,59 @@
+{
+  "_comment": [
+    "Catalog of every model bundle published in this repository.",
+    "This file is documentation: the app reads its own copy at",
+    "MeetingAssist_AdvAPI/assets/asr_models.json, and that copy is the",
+    "fallback when the Supabase `transcription_models` table is unreachable.",
+    "Keep the three in agreement: table -> this file -> bundled asset.",
+    "sha256 values were computed on 2026-09-15 from",
+    "huggingface.co/csukuangfj/sherpa-onnx-whisper-tiny (int8 exports)."
+  ],
+  "models": [
+    {
+      "model_key": "whisper-tiny",
+      "version": 1,
+      "display_name": "Whisper tiny (offline)",
+      "engine": "sherpa_onnx_whisper",
+      "release_tag": "asr-tiny-1",
+      "asset_root": "https://github.com/Amresh-CVRCE/meeting-assistant-transcription-models/releases/download/asr-tiny-1/",
+      "languages": ["en", "hi"],
+      "size_bytes": 103609903,
+      "active": true,
+      "notes": "99 MB. Fast enough to transcribe while the meeting is still running on a modern phone; weaker Hindi/Hinglish accuracy than base.",
+      "files": [
+        {
+          "name": "tiny-encoder.int8.onnx",
+          "size_bytes": 12937772,
+          "sha256": "d24fb083ae3b1041fc24e97971d60e280c9342201fbb67b0ab428a8b4a51a434"
+        },
+        {
+          "name": "tiny-decoder.int8.onnx",
+          "size_bytes": 89855401,
+          "sha256": "d2fece8dd42771f1df975c6c0445770d0c292bf7547c2cae04a6c0cc57540925"
+        },
+        {
+          "name": "tiny-tokens.txt",
+          "size_bytes": 816730,
+          "sha256": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+        }
+      ]
+    },
+    {
+      "model_key": "whisper-base",
+      "version": 1,
+      "display_name": "Whisper base (offline)",
+      "engine": "sherpa_onnx_whisper",
+      "release_tag": null,
+      "asset_root": "",
+      "languages": ["en", "hi"],
+      "size_bytes": 0,
+      "active": false,
+      "notes": "Planned, not published: ~153 MB (int8) from csukuangfj/sherpa-onnx-whisper-base. Better Hindi/Hinglish than tiny. Publish under tag asr-base-1 and fill in real sizes/sha256 - do not edit these placeholders to look finished.",
+      "files": [
+        {"name": "base-encoder.int8.onnx", "size_bytes": 0, "sha256": "SET_ME"},
+        {"name": "base-decoder.int8.onnx", "size_bytes": 0, "sha256": "SET_ME"},
+        {"name": "base-tokens.txt", "size_bytes": 0, "sha256": "SET_ME"}
+      ]
+    }
+  ]
+}
