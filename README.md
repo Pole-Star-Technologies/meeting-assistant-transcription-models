@@ -41,6 +41,10 @@ shipped app build refers to it. Updates are a new tag, always.
 | Tag | Bundle | Size | Languages |
 |---|---|---|---|
 | [`asr-tiny-1`](../../releases/tag/asr-tiny-1) | sherpa-onnx Whisper **tiny**, int8 | 103,609,903 B (~99 MB) | en, hi |
+| [`asr-base-1`](../../releases/tag/asr-base-1) | sherpa-onnx Whisper **base**, int8 | 160,609,290 B (~153 MB) | en, hi |
+
+Both tags are published and both are `active = true` in the app's catalog; `base` is
+offered as an opt-in because of its download size.
 
 ## Integrity
 
@@ -76,6 +80,12 @@ Only one `active` model per `model_key` may exist; the app takes the newest vers
 and installs it under `<app support>/asr/<model_key>/v<version>/`.
 
 ## Provenance
+
+This repository belongs to the **Pole-Star-Technologies** organisation, and the app's
+catalog (`asset_root`, in the database and in the bundled file) names it as such. It
+was created under a personal account and transferred on 2026-10-04; GitHub's 301 from
+the old address is a courtesy that ends if the old name is reused, so nothing in the
+app may refer to the personal path again.
 
 Exported Whisper models from [`csukuangfj` (k2-fsa / sherpa-onnx)](https://huggingface.co/csukuangfj),
 int8-quantised variants. OpenAI Whisper is MIT-licensed; redistribution here is for
